@@ -1,0 +1,20 @@
+{
+  "root": true,
+  "env": { "browser": true, "es2020": true },
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals", 
+    "next/typescript",  
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules": {
+    "@next/next/no-document-import-in-page": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-types": "off",
+    "indent": ["error", 2],
+    "no-extra-boolean-cast": "off",
+    "react-refresh/only-export-components": "off"
+  }
+}
