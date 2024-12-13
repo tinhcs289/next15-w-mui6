@@ -1,5 +1,9 @@
+import getUserLocale from "@/server-actions/getUserLocale";
+import NotFoundView from "@/views/NotFoundView";
 
-export default function LocaleNotFound() {
-    // use translation for displaying message
-    return <div>Not Found</div>;
+export default async function LocaleNotFound() {
+  const locale = await getUserLocale();
+  return (
+    <NotFoundView locale={locale} />
+  );
 }

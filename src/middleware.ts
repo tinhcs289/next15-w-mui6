@@ -1,4 +1,4 @@
-import stackMiddleware from "@/middlewares/stackMiddleware";
+import stackMiddleware from "@/helpers/stackMiddleware";
 import withLocale from "@/middlewares/withLocale";
 import withXUrl from "@/middlewares/withXUrl";
 

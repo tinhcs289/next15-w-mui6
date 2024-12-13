@@ -1,5 +1,9 @@
-import RedirectToDefaultLocale from "@/components/RedirectToDefaultLocale";
+import getUserLocale from "@/server-actions/getUserLocale";
+import NotFoundView from "@/views/NotFoundView";
 
-export default function RootNotFound() {
-    return <RedirectToDefaultLocale />;
+export default async function RootNotFound() {
+  const locale = await getUserLocale();
+  return (
+    <NotFoundView locale={locale} />
+  );
 }

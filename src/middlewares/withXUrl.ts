@@ -8,7 +8,9 @@ const withXUrl: NextMiddlewareFactory = (nextMiddleware) => {
     event: NextFetchEvent,
     response: NextResponse
   ) => {
-    request.headers.set("x-url", request.url);
+    if (!request.url.includes("/_next/")) {
+      request.headers.set("x-url", request.url);
+    }
     return nextMiddleware(request, event, response);
   };
 };
