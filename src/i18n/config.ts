@@ -1,7 +1,5 @@
-import { CN, EN, VI, ALL_LOCALE } from "@/constants/locale";
+import { ALL_LOCALE } from "@/constants/locale";
 import type { LocalePrefix } from "next-intl/routing";
-
-export const DEFAULT_LOCALE = VI;
 
 export const LOCALE_PREFIX_PATH = ALL_LOCALE.map((l) => `/${l}`);
 

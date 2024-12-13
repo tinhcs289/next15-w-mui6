@@ -50,9 +50,9 @@ export type UseSetStateReturns<StateValues extends BaseStates = BaseStates> = (
     const someFunctionToCall = useCallback((params: ...) => { ... }, [...]);
     useInitState('someFunctionToCall', someFunctionToCall, { when: 'whenever-value-changes' });
     // option 1: the shorter way
-    const { ..., useAction } = createStatesContext<{ ..., someFunctionToCall: (params: ...) => void } }>();
+    const { ..., UseDefineMethod } = createStatesContext<{ ..., someFunctionToCall: (params: ...) => void } }>();
     ....
-    const someFunctionToCall = useAction('someFunctionToCall',(params: ...) => { ... }, [...]);
+    const someFunctionToCall = UseDefineMethod('someFunctionToCall',(params: ...) => { ... }, [...]);
 
     // How to use a function which has been added to store.
     const someFunctionToCall = useGetState((store) => store.someFunctionToCall);
@@ -179,7 +179,7 @@ export default function createStatesContext<
     return init;
   }
 
-  function useAction<F extends Function>(
+  function useDefineMethod<F extends Function>(
     actionName: keyof StateValues,
     ...useCallbackParams: Parameters<typeof useCallback<F>>
   ) {
@@ -194,7 +194,7 @@ export default function createStatesContext<
     useGetState,
     useSetState,
     useInitState,
-    useAction,
+    useDefineMethod,
   };
 }
 
@@ -210,5 +210,5 @@ export type UseSetState<StateValues extends BaseStates = BaseStates> =
 export type UseInitState<StateValues extends BaseStates = BaseStates> =
   CreateStatesContext<StateValues>["useInitState"];
 
-export type UseAction<StateValues extends BaseStates = BaseStates> =
-  CreateStatesContext<StateValues>["useAction"];
+export type UseDefineMethod<StateValues extends BaseStates = BaseStates> =
+  CreateStatesContext<StateValues>["useDefineMethod"];

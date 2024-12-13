@@ -1,7 +1,7 @@
 
-import { ALL_LOCALE } from "@/constants/locale";
+import { ALL_LOCALE, DEFAULT_LOCALE } from "@/constants/locale";
 import { ALL_PATHS } from "@/constants/paths";
-import { DEFAULT_LOCALE, INTL_LOCALE_PREFIX, LOCALE_PREFIX_PATH } from "@/i18n/config";
+import { INTL_LOCALE_PREFIX, LOCALE_PREFIX_PATH } from "@/i18n/config";
 import type { NextMiddlewareFactory } from "@/types/middleware";
 import createMiddleware from "next-intl/middleware";
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
